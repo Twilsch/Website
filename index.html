@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobias Wilsch</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: #fff;
+    }
+    header, section, footer {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    .lang-switch {
+      float: right;
+    }
+    nav {
+      text-align: right;
+      margin-top: -2rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #777;
+      font-weight: 400;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    nav a:hover {
+      color: #333;
+      border-bottom: 1px solid #aaa;
+    }
+    .book-cover {
+      max-width: 200px;
+      margin: 1rem 0;
+    }
+    .profile {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .profile img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .hidden {
+      display: none;
+    }
+    footer {
+      font-size: 0.9em;
+      text-align: center;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+    .lang-toggle {
+      text-align: right;
+      margin-top: -1rem;
+    }
+    .lang-toggle button {
+      margin-left: 1rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #222;
+    }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+      document.getElementById('content-de').classList.toggle('hidden', lang !== 'de');
+      document.querySelector('p[lang="en"]').classList.toggle('hidden', lang !== 'en');
+      document.getElementById('tagline-de').classList.toggle('hidden', lang !== 'de');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Tobias Wilsch</h1>
+    <p lang="en">Philosopher · Lecturer · Manager</p>
+    <p lang="de" class="hidden" id="tagline-de">Philosoph · Hochschullehrer · Wissenschaftsmanager</p>
+    <div class="lang-toggle">
+      <button onclick="switchLang('en')" aria-label="Switch to English" style="background: none; border: none; cursor: pointer; font-size: 1rem;">
+        <img src="gb.svg" alt="English" style="width: 20px; vertical-align: middle;"> EN
+      </button>
+      <button onclick="switchLang('de')" aria-label="Switch to German" style="background: none; border: none; cursor: pointer; font-size: 1rem;">
+        <img src="de.svg" alt="Deutsch" style="width: 20px; vertical-align: middle;"> DE
+      </button>
+    </div>
+  </header>
+
+  <div id="content-en">
+    <section id="about">
+      <h2>About</h2>
+      <div class="profile">
+        <div>
+          <p>Tobias is a faculty member at the University of Tübingen. He is an experienced academic teacher with extensive practice in science management. His research focuses on metaphysics, philosophy of science, epistemology, and action theory. Tobias earned his PhD at Rutgers University, held a postdoc position in Uppsala, and served as interim professor in Mainz (2021–2023).</p>
+        </div>
+        <img src="profile_picture.jpg" alt="Tobias Wilsch portrait">
+      </div>
+    </section><section id="book">
+      <h2>Book</h2>
+      <img src="book_cover.jpg" alt="Book Cover" class="book-cover" style="max-width:140px; margin:0 0 1rem 0; display:block;">
+      <p><strong><em>The Sources of Necessity: Essence, Laws, and Logic</em></strong><br>
+      Oxford University Press, 2025</p>
+      <p><a href="https://academic.oup.com/book/59816" target="_blank">Find out more at Oxford University Press</a></p>
+    </section>
+
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p><a href="Wilsch_CV.pdf" target="_blank">Academic CV (PDF)</a></p>
+      <p><a href="Lebenslauf_Wilsch.pdf" target="_blank">General CV (in German, PDF)</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: tobias [dot] wilsch [at] gmail [dot] com</p>
+    </section>
+  </div>
+
+  <div id="content-de" class="hidden">
+    <section id="about">
+      <h2>Über mich</h2>
+      <div class="profile">
+        <div>
+          <p>Tobias Wilsch ist Akademischer Rat an der Universität Tübingen. Er ist erfahrener Hochschullehrer mit fundierter Praxis im Wissenschaftsmanagement. Seine Forschungsschwerpunkte liegen in der Metaphysik, Wissenschaftstheorie, Erkenntnistheorie und Handlungstheorie. Tobias Wilsch hat an der Rutgers University promoviert, war Postdoktorand in Uppsala und vertrat von 2021 bis 2023 den Lehrstuhl für Theoretische Philosophie in Mainz.</p>
+        </div>
+        <img src="profile_picture.jpg" alt="Portrait von Tobias Wilsch">
+      </div>
+    </section>
+    <section id="book">
+      <h2>Buch</h2>
+      <img src="book_cover.jpg" alt="Book Cover" class="book-cover" style="max-width:140px; margin:0 0 1rem 0; display:block;">
+      <p><strong><em>The Sources of Necessity: Essence, Laws, and Logic</em></strong><br>
+      Oxford University Press, 2025</p>
+      <p><a href="https://academic.oup.com/book/59816" target="_blank">Mehr erfahren bei Oxford University Press</a></p>
+    </section>
+
+    <section id="cv">
+      <h2>Lebenslauf</h2>
+      <p><a href="Wilsch_CV.pdf" target="_blank">Wissenschaftlicher Lebenslauf (auf Englisch, PDF)</a></p>
+      <p><a href="Lebenslauf_Wilsch.pdf" target="_blank">Allgemeiner Lebenslauf (auf Deutsch, PDF)</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p>E-Mail: tobias [punkt] wilsch [ät] gmail [punkt] com</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; Tobias Wilsch 2025</p>
+  </footer>
+</body>
+</html>
